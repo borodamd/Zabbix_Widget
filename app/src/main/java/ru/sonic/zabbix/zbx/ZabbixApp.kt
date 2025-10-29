@@ -96,7 +96,9 @@ fun AppNavigation(preferencesManager: PreferencesManager, appSettings: AppSettin
                 currentScreen = AppScreen.Main
             }
             AppScreen.Main -> MainScreen(
-                onSettingsClick = { currentScreen = AppScreen.Settings }
+                servers = servers,
+                onSettingsClick = { currentScreen = AppScreen.Settings },
+                preferencesManager = preferencesManager
             )
             AppScreen.Settings -> SettingsScreen(
                 appSettings = appSettings,
